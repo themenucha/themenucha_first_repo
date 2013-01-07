@@ -1,0 +1,10 @@
+
+obj-m += hello.o
+
+KDIR = /usr/src/linux-headers-3.2.0-27-generic
+
+
+all:
+	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD)
+clean:
+	rm -rf *.o *.ko *.mod *.symvers *order
